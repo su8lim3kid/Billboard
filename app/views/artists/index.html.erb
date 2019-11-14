@@ -1,0 +1,25 @@
+<h1 class="ui header">Artists</h1>
+<table class="ui striped table">
+  <thead>
+    <tr class="center aligned">
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @artists.each do |artist| %>
+      <tr class="center aligned">
+      <div class="ui card">
+      <div class="content">
+      <%= link_to "#{artist.first_name} #{artist.last_name}", artist, class: "header" %>
+   
+        
+        </div>
+        </div>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br />
+<%= link_to "New artist", new_artist_path %>
