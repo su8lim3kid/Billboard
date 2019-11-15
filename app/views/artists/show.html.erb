@@ -1,15 +1,14 @@
+<div class="ui card">
 
   </div>
   <div class="content">
     <p class="header">
       <%= @artist.first_name %> <%= @artist.last_name %>
-  
-    </div>
-   
-
+    </p>
+    
+  </div>
   <div class="extra content">
     <%= link_to 'Edit', edit_artist_path(@artist) %> |
-    <%= link_to 'Back', artists_path %> |
-    <%= link_to 'Destroy', @artist, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to 'Back', artists_path %>
   </div>
 </div>

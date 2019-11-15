@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2019_11_14_230943) do
   enable_extension "plpgsql"
 
   create_table "artists", force: :cascade do |t|
+   
     t.string "first_name"
     t.string "last_name"
     t.datetime "created_at", precision: 6, null: false

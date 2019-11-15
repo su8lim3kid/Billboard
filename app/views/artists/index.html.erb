@@ -1,25 +1,28 @@
-<h1 class="ui header">Artists</h1>
-<table class="ui striped table">
-  <thead>
-    <tr class="center aligned">
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-  
-  <tbody>
-    <% @artists.each do |artist| %>
-      <tr class="center aligned">
+<h1 class="ui header">People</h1>
+<%= link_to 'New Artist', new_artist_path %>
+<div class="ui divider"></div>
+
+<div class="ui grid">
+  <% @artists.each do |artist| %>
+    <div class="sixteen wide mobile eight wide tablet four wide computer column">
       <div class="ui card">
-      <div class="content">
-      <%= link_to "#{artist.first_name} #{artist.last_name}", artist, class: "header" %>
-   
+        <div class="image">
         
         </div>
+        <div class="content">
+          <%= link_to "#{artist.first_name} #{artist.last_name}", artist, class: "header" %>
         </div>
-        
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br />
-<%= link_to "New artist", new_artist_path %>
+        <div class="extra content">
+          <div class="ui two buttons">
+            <div class="ui basic green button">
+              <%= link_to 'Edit', edit_artist_path(artist) %>
+            </div>
+            <div class="ui basic red button">
+              <%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

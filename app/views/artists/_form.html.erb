@@ -1,14 +1,22 @@
-<%= form_with(model: @artist, local: true, class: "ui form") do |f| %>
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name, required: true, placeholder: "First Name" %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name, required: true, placeholder: "Last Name" %>
-  </div>
-  <%= f.submit %>
+<div class="ui card">
   
- 
- 
-<% end %>
+  </div>
+  <div class="content">
+    <p class="header">
+      <%= @artist.first_name %> <%= @artist.last_name %>
+    </p>
+    <h1><%= @artist.id ? 'Edit Artist' : 'Create Artist' %></h1>
+    <hr />
+    <%= form_for @artist do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :first_name,required: true, autofocus: true %>
+      <%= f.text_field :last_name,required: true, autofocus: true %>
+      <%= f.submit %>
+    <% end %>
+
+  </div>
+  <div class="extra content">
+    <%# link_to 'Edit', edit_artist_path(@artist) %> 
+    <%= link_to 'Back', artists_path %>
+  </div>
+</div>
