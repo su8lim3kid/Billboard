@@ -1,4 +1,4 @@
-cclass SongsController < ApplicationController
+class SongsController < ApplicationController
 before_action :set_artist
 before_action :set_song, only: [:show, :edit, :update, :destroy]
 
@@ -38,11 +38,11 @@ end
 
 def destroy
   @song.destroy
-  redirect_to artist_song_path(@artist)
+  redirect_to artists_song_path(@artist)
 end
 
 private
-  def set_sub
+  def set_artist
     @artist = Artist.find(params[:artist_id])
   end
 
@@ -51,6 +51,6 @@ private
   end
 
   def song_params
-    params.require(:song).permit(:name, :body)
+    params.require(:song).permit(:name,)
   end
 end

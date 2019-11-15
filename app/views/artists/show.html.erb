@@ -6,9 +6,21 @@
       <%= @artist.first_name %> <%= @artist.last_name %>
     </p>
     
+
+
+    
   </div>
-  <div class="extra content">
+  <div class="extra content"> |
     <%= link_to 'Edit', edit_artist_path(@artist) %> |
-    <%= link_to 'Back', artists_path %>
+    <%= link_to 'Back', artists_path %> |
+    <%=link_to 'View Songs', artist_songs_path(@artist) %>
+    
   </div>
+  
+    
 </div>
+
+
+
+
+
