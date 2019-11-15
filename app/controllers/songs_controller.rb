@@ -22,7 +22,8 @@ def create
   @song = @artist.songs.new(song_params)
 
   if @song.save
-    redirect_to [@artist, @song]
+    # redirect_to [@artist, @song]
+    redirect_to artist_songs_path
   else
     render :new
   end
@@ -38,7 +39,8 @@ end
 
 def destroy
   @song.destroy
-  redirect_to artists_song_path(@artist)
+  # redirect_to artist_song_path(@artist)
+  redirect_to artist_songs_path
 end
 
 private
