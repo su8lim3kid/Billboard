@@ -3,14 +3,14 @@ before_action :set_artist
 before_action :set_song, only: [:show, :edit, :update, :destroy]
 
 def index
-  @songs = @sub.songs
+  @songs = @artist.songs
 end
 
 def show
 end
 
 def new
-  @song = @sub.songss.new
+  @song = @artist.songs.new
   render partial: "form"
 end
 
