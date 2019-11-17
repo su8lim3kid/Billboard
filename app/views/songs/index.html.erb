@@ -1,13 +1,32 @@
-<h1>All Songs </h1>
-<%= link_to 'Create a new Song', new_artist_song_path(@artist) %>
+<h1 class="ui header">Songs</h1>
+<%= link_to 'New Song', new_artist_song_path %>
+<div class="ui divider"></div>
 
-<ul>
+<div class="ui grid">
   <% @songs.each do |song| %>
-    <li><%= link_to song.name, [@artist, song] %></li> |
-    <%= link_to 'Back', artists_path %> |
-    <%= link_to 'Delete Song', [@artist, song], method: :delete %> |
-    <%= link_to 'edit song' %>
-    
-   
+    <div class="sixteen wide mobile eight wide tablet four wide computer column">
+      <div class="ui card">
+        <div class="image">
+        
+        </div>
+        <div class="content">
+        <li><%= link_to song.name, [@artist, song] %></li> 
+          
+        </div>
+        <div class="extra content">
+          <div class="ui two buttons">
+            <div class="ui basic green button">
+            Edit
+         
+            </div>
+            <div class="ui basic red button">
+            <%= link_to 'Destroy', [@artist, song], method: :delete %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
-</ul>
+</div>
+
+

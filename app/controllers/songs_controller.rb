@@ -15,7 +15,8 @@ def new
 end
 
 def edit
-  render partial: "form"
+  render_form :edit
+  
 end
 
 def create
